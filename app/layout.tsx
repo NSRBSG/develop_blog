@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import './globals.css';
+import Providers from './providers';
 
 export const metadata: Metadata = {
   title: 'NSRBSG',
@@ -12,8 +13,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='kr'>
-      <body>{children}</body>
+    <html suppressHydrationWarning lang='kr'>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
